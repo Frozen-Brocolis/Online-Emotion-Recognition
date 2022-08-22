@@ -8,12 +8,12 @@ import Grafik
 def Camera():
   global df
   time.clock()
-  cap = cv2.VideoCapture(1)
+  cap = cv2.VideoCapture(0)
   while True:
     success, img = cap.read()
     if success:
       cv2.imshow('rez', img)
-      df = DeepFace.analyze(img, actions=['emotion'])
+      df = DeepFace.analyze(img, actions=['emotion'], enforce_detection=False)
       # cv2.waitKey()
       if cv2.waitKey(1) & 0xff == ord('q'):
         break
