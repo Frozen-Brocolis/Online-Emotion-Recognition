@@ -14,3 +14,12 @@
 
 Библиотеки - для работы с веб-камерой/видеофайлом используется [OpenCV](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html), 
 для распознания эмоций [deepface](https://pypi.org/project/deepface/). Для более удобного понимания полученных данных используется [matplotlib](https://matplotlib.org/stable/tutorials/introductory/pyplot.html). Также для ускорения используется [threading](https://docs.python.org/3/library/threading.html).
+
+## Важное
+
+По умолчаню программа смотрит через 2 камеру если у устройства её нет программа будет работать некоректно. 
+Чтобы это исправить:
+
+`cv2.VideoCapture(1) ==> cv2.VideoCapture(0)`
+
+Матрица для распознания эмоций достаточно обьёмная её загрузка займёт некоторое время. 
